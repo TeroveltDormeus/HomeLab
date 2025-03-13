@@ -1,7 +1,19 @@
 <h1>HomeLab w/ UniFi Technologies
 
-<h2>Description</h2>
+<h2>Objective</h2>
 This project involves adding more infrastrucuture like a router and switch to connect my Internet Service Provider(ISP) with ethernet cablees of course, You'll get hands on expereince setting a homelab from ip configuration to securing a network.
+<h2>Cables and Infrastructure</h2>
+<p align="left">
+- UCG Ultra Gateway
+<p align="left">
+- USW Lite 8 PoE Switch
+<p align="left">
+- Unifi U6+ Access Point
+<p align="left">
+- 5 Cat6A RJ45 Ethernet Cables
+<p align="left">
+
+
 </p>
 </P>
 <p align="center">
