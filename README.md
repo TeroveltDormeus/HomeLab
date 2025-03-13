@@ -1,13 +1,16 @@
 <h1>HomeLab w/ UniFi Technologies
 
 <h2>Description</h2>
+This project involves adding more infrastrucuture like a router and switch to connect my Internet Service Provider(ISP) with ethernet cablees of course, You'll get hands on expereince setting a homelab from ip configuration to securing a network.
+</p>
+</P>
 <p align="center">
 Installed the UniFi Cloud Gateway Ultra, USW Lite 8 Port PoE Switch and U6+ Access Point.
 </p>
 <img src="https://i.imgur.com/WehesNu.png">
 <p align="center"
 
-Log in to the AT&T Gateway by entering its IP address (192.168.1.254) and your credentials, then enable IP Passthrough mode under LAN settings, disabling the DHCP Server to prevent conflicts. Assign the UniFi Cloud Gateway Ultra (or another device) to receive the public IP address from the AT&T Gateway and connect it to the LAN port.
+Log in to the AT&T Gateway by entering its IP address (192.168.1.*) and your credentials, then enable IP Passthrough mode under LAN settings, disabling the DHCP Server to prevent conflicts. Assign the UniFi Cloud Gateway Ultra (or another device) to receive the public IP address from the AT&T Gateway and connect it to the LAN port.
 </p>
 <img src="https://i.imgur.com/JrtSJP4.png">
 <p align="center">
