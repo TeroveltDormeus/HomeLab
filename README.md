@@ -1,44 +1,29 @@
-<h1>HomeLab w/ UniFi Technologies
+<h1>HomeLab Project💻
 
-<h2>Objective</h2>
-This project involves adding more infrastrucuture like a router and switch to connect my Internet Service Provider(ISP) with ethernet cablees of course, You'll get hands on expereince setting a homelab from ip configuration to securing a network.
-<h2>Cables and Infrastructure</h2>
-<p align="left">
+<h3>Project Objective</h3>
+The objective for this project is to design and implement a secure, segmented, and scalable home network using enterprise-grade UniFi hardware, enabling hands-on experience in network security, traffic management, and real-world cybersecurity practices.
+<h3>Cables and Infrastructure</h3>
+
+
 - UCG Ultra Gateway
-<p align="left">
 - USW Lite 8 PoE Switch
-<p align="left">
 - Unifi U6+ Access Point
-<p align="left">
 - 5 Cat6A RJ45 Ethernet Cables
-<p align="left">
+- UNV Camera DVR
 
 
-</p>
-</P>
-<p align="center">
-Installed the UniFi Cloud Gateway Ultra, USW Lite 8 Port PoE Switch and U6+ Access Point.
-</p>
-<img src="https://i.imgur.com/WehesNu.png">
-<p align="center"
+<h2>Network Diagram</h2>
+<img src="https://i.imgur.com/BtwqLql.png">
 
-Log in to the AT&T Gateway by entering its IP address (192.168.1.*) and your credentials, then enable IP Passthrough mode under LAN settings, disabling the DHCP Server to prevent conflicts. Assign the UniFi Cloud Gateway Ultra (or another device) to receive the public IP address from the AT&T Gateway and connect it to the LAN port.
-</p>
-<img src="https://i.imgur.com/JrtSJP4.png">
-<p align="center">
-Connect the UniFi Cloud Gateway Ultra’s WAN port to the AT&T Gateway’s LAN port using an Ethernet cable. Then, access the UniFi Network Controller, log in, and complete the setup wizard to configure the gateway, ensuring it obtains a public IP from the AT&T Gateway and has internet access.
-<img src="https://i.imgur.com/glNl3In.png">
+<h3>🔒Security Focus Areas</h3>
 
-<p align="center"
+- VLAN segmentation and firewall rules
+- IDS/IPS using UniFi threat management
+- Encrypted remote access with VPN
+- Lab environment for penetration testing tools
 
-Connect one of the LAN ports on the UniFi Cloud Gateway Ultra to the uplink port on the UniFi Lite 8-Port Switch using an Ethernet cable. In the UniFi Network Controller, ensure the switch is detected, and if not, manually add it and configure it to "Managed" mode for centralized control. Connect a LAN port on the UniFi Lite 8-Port Switch to the Ethernet port on the UniFi Access Point, ensuring PoE is enabled. In the UniFi Network Controller, adopt the Access Point, configure the SSID, Wi-Fi security, and other settings to set up your wireless network.
+<h3>⚙️Tools & Software</h3>
 
-<img src="https://i.imgur.com/BAly5ZS.png">
-<p align="center"
-  
-Ensure each device has internet access and enjoy the simplicity of UniFi technologies.
-</p>
-<img src="https://i.imgur.com/nuNZZ62.png">
-
-
-
+- UniFi Controller (self-hosted)
+- Suricata (IDS testing)
+- Wireshark, Kali Linux (attack simulation)
