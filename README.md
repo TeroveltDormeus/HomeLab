@@ -34,7 +34,14 @@ You want the UniFi Gateway to act as your main router/firewall
 - Save and reboot BGW320 and UCG Ultra
 - Now UCG Ultra gets the public IP and handles routing/firewall
 
+
+<img src="https://i.imgur.com/A1dlMpJ.png">
+
 <h3>🛠️Adopt Devices in UniFi Network Console</h3>
+
+
+
+
 
 
 <h3>Set Up UniFi Console</h3>
@@ -44,67 +51,61 @@ You want the UniFi Gateway to act as your main router/firewall
 - Log in, set location name (e.g., "Homelab")
 - Adopt your UCG Ultra and USW Lite PoE if not already adopted
 - Ensure they're updated to latest firmware
+- Change IP address and Set Static IPs
+- Configure AP
+
+
+<h3>Change IP address and Set Static IPs</h3>
+
+
+
+<h3>Switch Static IP</h3>
+
+<h3>AP Static IP</h3>
+
+
+<h3>AP Configurations</h3>
+
+
 
 
 <h3>Create VLANs</h3>
 VLAN	Name	ID	Subnet	Purpose
 
-- 10	Management	10	192.168.10.0/24	UniFi devices, switches
-- 20	Servers	20	192.168.20.0/24	Proxmox, VMs
-- 30	IoT	30	192.168.30.0/24	Smart plugs, cameras
-- 40	Guest	40	192.168.40.0/24	Visitors
-- 50	Default LAN	1	192.168.1.0/24	General-use devices
+- 1 Management (1)	10.25.7.0/24	UniFi router, switch
+- 20 Surveillance	(20) 10.25.10.0/24 Security Cameras
+- 30 IoT	(30)	10.25.11.0/24	IoT devices
+- 40 Guest	(40)	192.168.2.0/24	Visitors
+- 50 Home Office (50) 10.25.12.0/24	Work PC
+- 60 Sandbox (60) 10.25.13.0/24
+
+
+
 
 <h3>Add VLAN Networks</h3>
 
 
 - Go to UniFi Console > Settings > Networks
 - Click Create New Network
-- Name: Servers, VLAN ID: 20, Subnet: 192.168.20.1/24, DHCP: Enabled.
+- Name: IoT, VLAN ID: 30, Subnet: 10.25.11.0/24, DHCP: Enabled
 - Repeat for each VLAN you want
-
-<h3>Configure Firewall Rules</h3>
-<h4>Set Firewall Rules Between VLANs</h4>
+- Apply VLANs to the respected switch ports matching the connections
 
 
-- Go to Settings > Firewall > Rules > LAN IN
-- Create rules like:
-
-Block IoT from talking to everything else:
-- Name: Block IoT to LAN'
-- Action: Drop
-- Source: 192.168.30.0/24
-- Destination: 192.168.0.0/16
-
-Allow Management access to everything:
-- Name: Allow Mgmt
-- Action: Accept
-- Source: 192.168.10.0/24
-- Destination: Any
-
-Block Guest from internal VLANs:
-- Block 192.168.40.0/24 to 192.168.0.0/16 (except internet)
-
-<h3>Assign VLANs to Ports and SSIDs</h3>
-<h4>Assign VLANs to Switch Ports</h4>
-
-- Go to Devices > USW Lite PoE > Ports
-Edit each port:
-- Set port profile to match VLAN (e.g., Servers, IoT)
-- Use “All” or “Trunk” for access ports to VMs or APs.
 
 
-<h4>Create SSIDs for VLANs (Wi-Fi)</h4>
+<h3>Create Wifi Network</h3>
 
 
-- Go to WiFi > Add New WiFi Network
-- Name: IoT
-- VLAN ID: 30
-- WPA2 password: Your choice
-Repeat for each VLAN you want wireless access to
+- Create name, password
+- Select IoT Network
+- Make sure 2.4Ghz, 5Ghz is checked
+- Select WPA2/WPA3 as the Security Protocol
 
 
-<h3>🔒 PART 7: (Optional) Security Add-ons</h3>
+
+
+<h3>🔒 PART 7: Security Add-ons</h3>
 
 
 - Enable IPS/IDS under Firewall > Threat Management (for UCG Ultra)
