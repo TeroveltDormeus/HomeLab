@@ -72,12 +72,6 @@ You want the UniFi Gateway to act as your main router/firewall
 <h3>Create VLANs</h3>
 VLAN	Name	ID	Subnet	Purpose
 
-- 1 Management (1)	10.25.7.0/24	UniFi router, switch
-- 20 Surveillance	(20) 10.25.10.0/24 Security Cameras
-- 30 IoT	(30)	10.25.11.0/24	IoT devices
-- 40 Guest	(40)	192.168.2.0/24	Visitors
-- 50 Home Office (50) 10.25.12.0/24	Work PC
-- 60 Sandbox (60) 10.25.13.0/24
 
 
 
