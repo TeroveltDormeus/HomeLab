@@ -14,13 +14,11 @@ The objective for this project is to design and implement a secure, segmented, a
 
 - VLAN segmentation and firewall rules
 - IDS/IPS using UniFi threat management
-- Encrypted remote access with VPN
 - Lab environment for penetration testing tools
 
 <h3>⚙️Tools & Software</h3>
 
 - UniFi Controller (self-hosted)
-- Wireshark
 
 <h3>Setup BGW320-500 to Passthrough Mode</h3>
 You want the UniFi Gateway to act as your main router/firewall
@@ -38,6 +36,9 @@ You want the UniFi Gateway to act as your main router/firewall
 <img src="https://i.imgur.com/A1dlMpJ.png">
 
 <h3>🛠️Adopt Devices in UniFi Network Console</h3>
+
+
+<img src="https://i.imgur.com/LpX5IxT.png">
 
 
 
@@ -58,13 +59,25 @@ You want the UniFi Gateway to act as your main router/firewall
 <h3>Change IP address and Set Static IPs</h3>
 
 
+<img src="https://i.imgur.com/mp970Cm.png">
 
 <h3>Switch Static IP</h3>
+
+
+<img src="https://i.imgur.com/03PsMI0.png">
 
 <h3>AP Static IP</h3>
 
 
+<img src="https://i.imgur.com/gGszXEO.png">
+
+
 <h3>AP Configurations</h3>
+
+
+<img src="https://i.imgur.com/e8zrIgJ.png">
+
+
 
 
 
@@ -72,6 +85,13 @@ You want the UniFi Gateway to act as your main router/firewall
 <h3>Create VLANs</h3>
 VLAN	Name	ID	Subnet	Purpose
 
+
+- 1 Management (1)	10.25.7.0/24	UniFi router, switch
+- 20 Surveillance	(20) 10.25.10.0/24 Security Cameras
+- 30 IoT	(30)	10.25.11.0/24	IoT devices
+- 40 Guest	(40)	192.168.2.0/24	Visitors
+- 50 Home Office (50) 10.25.12.0/24	Work PC
+- 60 Sandbox (60) 10.25.13.0/2
 
 
 
@@ -86,6 +106,10 @@ VLAN	Name	ID	Subnet	Purpose
 - Apply VLANs to the respected switch ports matching the connections
 
 
+<img src="https://i.imgur.com/dIu6CLu.png">
+
+
+
 
 
 <h3>Create Wifi Network</h3>
@@ -97,13 +121,36 @@ VLAN	Name	ID	Subnet	Purpose
 - Select WPA2/WPA3 as the Security Protocol
 
 
+<h3>Firewall Configurations</h3>
 
 
-<h3>🔒 PART 7: Security Add-ons</h3>
+- Go to the gear icon and click on the security tab
+- Click protection
+- Turn on Intrusion Prevention
+- Select your networks
+- Click Notify and Block as your detection mode
+- Make sure all detections are active
 
 
-- Enable IPS/IDS under Firewall > Threat Management (for UCG Ultra)
-- Use Geo-blocking for certain VLANs (like IoT)
+<h3>Traffic and Firewall Rules</h3>
+
+<h4>Block Communication Between VLANs</h4>
+
+
+- Click LAN
+- Click LAN In
+- Create entry
+- Make sure you select LAN In
+- Name this rule something easily recognizable
+- Select all protocols
+- Select source network(VLAN)
+- Select destination network(VLAN)
+- Repeat for however many VLANs you have
+
+  For me I have 4 VLANs that I don't want communicating with each other.
+
+<img src="https://i.imgur.com/MK4AneL.png">
+
 
 There you go a fully functional homelab with Unifi Hardware.
 
