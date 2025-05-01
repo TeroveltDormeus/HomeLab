@@ -151,6 +151,9 @@ VLAN	Name	ID	Subnet	Purpose
 
 <img src="https://i.imgur.com/MK4AneL.png">
 
+<h3>HomeLab Topology</h3>
+
+<img class="image-placeholder" src="https://i.imgur.com/dE84yxk.png" alt>
 
 There you go a fully functional homelab with Unifi Hardware.
 
