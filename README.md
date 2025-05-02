@@ -35,10 +35,7 @@ You want the UniFi Gateway to act as your main router/firewall
 
 <img src="https://i.imgur.com/A1dlMpJ.png">
 
-<h3>🛠️Adopt Devices in UniFi Network Console</h3>
 
-
-<img src="https://i.imgur.com/LpX5IxT.png">
 
 
 
@@ -51,6 +48,9 @@ You want the UniFi Gateway to act as your main router/firewall
 - Go to Unifi Site Manager
 - Log in, set location name (e.g., "Homelab")
 - Adopt your UCG Ultra and USW Lite PoE if not already adopted
+
+<img src="https://i.imgur.com/LpX5IxT.png">
+
 - Ensure they're updated to latest firmware
 - Change IP address and Set Static IPs
 - Configure AP
