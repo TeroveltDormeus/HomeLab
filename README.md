@@ -121,7 +121,7 @@ VLAN	Name	ID	Subnet	Purpose
 - Select WPA2/WPA3 as the Security Protocol
 
 
-<h3>Firewall Configurations</h3>
+<h3>IDS/IPS Configuration</h3>
 
 
 - Go to the gear icon and click on the security tab
